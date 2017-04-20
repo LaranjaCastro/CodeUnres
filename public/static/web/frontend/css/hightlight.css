@@ -1,0 +1,186 @@
+/*
+ * Source files from https://github.com/pinggod/hexo-theme-apollo/blob/master/source/scss/_partial/post.scss
+ */
+code,
+pre {
+  font-size: 0.8em;
+  padding-left: 20px;
+  background-color: #ecf0f1;
+  font-family: 'Roboto Mono', Monaco, courier, monospace; }
+
+code {
+  /*padding: 0.1em 0.4em;*/
+  padding-left: 0px;
+  background-color: #ecf0f1;
+  border-radius: 3px; }
+
+pre .hljs-line {
+  min-height: 1em; }
+
+.highlight {
+  position: relative;
+  margin: 1em 0;
+  border-radius: 2px;
+  line-height: 1.1em;
+  background-color: #ecf0f1;
+  overflow-x: auto; }
+  .highlight figcaption {
+    font-size: .9em;
+    padding: .4em;
+    border-bottom: 1px solid #bdc3c7; }
+  .highlight table, .highlight tr, .highlight td {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0; }
+  .highlight .gutter {
+    display: none; }
+  .highlight .code pre {
+    padding: 1.2em 1.4em;
+    line-height: 1.5em;
+    margin: 0; }
+
+.highlight.html .code:after, .highlight.js .code:after, .highlight.bash .code:after, .highlight.css .code:after, .highlight.scss .code:after, .highlight.diff .code:after, .highlight.java .code:after, .highlight.xml .code:after, .highlight.python .code:after, .highlight.json .code:after, .highlight.swift .code:after, .highlight.ruby .code:after, .highlight.perl .code:after, .highlight.php .code:after, .highlight.c .code:after, .highlight.cpp .code:after, .highlight.ts .code:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #bdc3c7;
+  text-align: right;
+  font-size: 0.75em;
+  padding: 5px 10px 0;
+  line-height: 15px;
+  height: 15px;
+  font-weight: 600; }
+
+.highlight.html .code:after {
+  content: "HTML"; }
+
+.highlight.js .code:after {
+  content: "JS"; }
+
+.highlight.bash .code:after {
+  content: "BASH"; }
+
+.highlight.css .code:after {
+  content: "CSS"; }
+
+.highlight.scss .code:after {
+  content: "SCSS"; }
+
+.highlight.diff .code:after {
+  content: "DIFF"; }
+
+.highlight.java .code:after {
+  content: "JAVA"; }
+
+.highlight.xml .code:after {
+  content: "XML"; }
+
+.highlight.python .code:after {
+  content: "PYTHON"; }
+
+.highlight.json .code:after {
+  content: "JSON"; }
+
+.highlight.swift .code:after {
+  content: "SWIFT"; }
+
+.highlight.ruby .code:after {
+  content: "RUBY"; }
+
+.highlight.perl .code:after {
+  content: "PERL"; }
+
+.highlight.php .code:after {
+  content: "PHP"; }
+
+.highlight.c .code:after {
+  content: "C"; }
+
+.highlight.java .code:after {
+  content: "JAVA"; }
+
+.highlight.cpp .code:after {
+  content: "CPP"; }
+
+.highlight.ts .code:after {
+  content: "TS"; }
+
+.highlight.cpp .code:after {
+  content: 'C++'; }
+
+pre {
+  color: #34495e; }
+  pre .hljs-function .hljs-keyword,
+  pre .hljs-constant {
+    color: #3498db; }
+  pre .hljs-keyword,
+  pre .hljs-attribute {
+    color: #e96900; }
+  pre .hljs-number,
+  pre .hljs-literal {
+    color: #8e44ad; }
+  pre .hljs-tag,
+  pre .hljs-tag .hljs-title,
+  pre .hljs-change,
+  pre .hljs-winutils,
+  pre .hljs-flow,
+  pre .hljs-lisp .hljs-title,
+  pre .hljs-clojure .hljs-built_in,
+  pre .hljs-nginx .hljs-title,
+  pre .hljs-tex .hljs-special {
+    color: #2980b9; }
+  pre .hljs-symbol,
+  pre .hljs-symbol .hljs-string,
+  pre .hljs-value,
+  pre .hljs-regexp {
+    color: #1abc9c; }
+  pre .hljs-title {
+    color: #2ecc71; }
+  pre .hljs-tag .hljs-value,
+  pre .hljs-string,
+  pre .hljs-subst,
+  pre .hljs-haskell .hljs-type,
+  pre .hljs-preprocessor,
+  pre .hljs-ruby .hljs-class .hljs-parent,
+  pre .hljs-built_in,
+  pre .hljs-sql .hljs-aggregate,
+  pre .hljs-django .hljs-template_tag,
+  pre .hljs-django .hljs-variable,
+  pre .hljs-smalltalk .hljs-class,
+  pre .hljs-javadoc,
+  pre .hljs-django .hljs-filter .hljs-argument,
+  pre .hljs-smalltalk .hljs-localvars,
+  pre .hljs-smalltalk .hljs-array,
+  pre .hljs-attr_selector,
+  pre .hljs-pseudo,
+  pre .hljs-addition,
+  pre .hljs-stream,
+  pre .hljs-envvar,
+  pre .hljs-apache .hljs-tag,
+  pre .hljs-apache .hljs-cbracket,
+  pre .hljs-tex .hljs-command,
+  pre .hljs-prompt {
+    color: #1abc9c; }
+  pre .hljs-comment,
+  pre .hljs-java .hljs-annotation,
+  pre .hljs-python .hljs-decorator,
+  pre .hljs-template_comment,
+  pre .hljs-pi,
+  pre .hljs-doctype,
+  pre .hljs-shebang,
+  pre .hljs-apache .hljs-sqbracket,
+  pre .hljs-tex .hljs-formula {
+    color: #95a5a6; }
+  pre .hljs-deletion {
+    color: #c0392b; }
+  pre .hljs-coffeescript .hljs-javascript,
+  pre .hljs-javascript .hljs-xml,
+  pre .hljs-tex .hljs-formula,
+  pre .hljs-xml .hljs-javascript,
+  pre .hljs-xml .hljs-vbscript,
+  pre .hljs-xml .hljs-css,
+  pre .hljs-xml .hljs-cdata {
+    opacity: 0.5; }
+
+/*# sourceMappingURL=hight.css.map */
