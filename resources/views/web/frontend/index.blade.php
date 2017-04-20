@@ -10,7 +10,6 @@
         });
 
         PageClick = function(pageclickednumber) {
-
             location.href = '{{ $domain }}' + pageclickednumber;
         }
     </script>
@@ -28,11 +27,5 @@
             @endforeach
     </ul>
 
-    <div id="pager" >
-        {{--<ul class="pagination">--}}
-            {{--<li class="current"><a>1</a></li>--}}
-            {{--<li class="current"><a>2</a></li>--}}
-            {{--<li class="current"><a>3</a></li>--}}
-        {{--</ul>--}}
-    </div>
+    <div id="pager" ></div>
 @endsection

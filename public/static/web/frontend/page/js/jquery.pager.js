@@ -14,7 +14,7 @@
             $(this).empty().append(renderpager(parseInt(options.pagenumber), parseInt(options.pagecount), options.buttonClickCallback));
             
             // specify correct cursor activity
-            $('.pages li').mouseover(function() { document.body.style.cursor = "pointer"; }).mouseout(function() { document.body.style.cursor = "auto"; });
+            $('.pagination li a').mouseover(function() { document.body.style.cursor = "pointer"; }).mouseout(function() { document.body.style.cursor = "auto"; });
         });
     };
 
@@ -48,9 +48,9 @@
         // loop thru visible pages and render buttons
         for (var page = startPoint; page <= endPoint; page++) {
 
-            var currentButton = $('<li class="current"><a href="#">' + (page) + '</a></li>');
+            var currentButton = $('<li class="current"><a href="javascript:void(0)">' + (page) + '</a></li>');
 
-            page == pagenumber ? currentButton.addClass('pgCurrent') : currentButton.click(function() { buttonClickCallback(this.firstChild.data); });
+            page == pagenumber ? currentButton.addClass('pgCurrent') : currentButton.click(function() { buttonClickCallback(this.firstChild.firstChild.data); });
             currentButton.appendTo($pager);
         }
 

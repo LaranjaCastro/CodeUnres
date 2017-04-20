@@ -37,6 +37,7 @@ Route::group(['domain' => 'admin.leon.com'], function () {
 // Web前台
 Route::group(['prefix' => '/'], function () {
     Route::get('/', 'Web\Frontend\Index@index');
+    Route::get('page/{id?}', 'Web\Frontend\Index@index');
     Route::get('t/{menu?}/{id?}', 'Web\Frontend\Article\Content@index');
     Route::get('{menu?}/{page?}/{num?}', 'Web\Frontend\Article\Index@lists');
 });

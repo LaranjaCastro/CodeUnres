@@ -22,14 +22,19 @@ class Index extends Controller
         $this->tableWeibo = new Weibo();
     }
 
-    public function index()
+    public function index($pageNow = false)
     {
+        $currentPage = 1;
+        if (is_numeric($pageNow)) {
+            $currentPage = $pageNow;
+        }
+
         $cond = array(
             'state' => 0,
             'recommend' => 1,
         );
         $page = new Page();
-        $data = $page->setPage(1)
+        $data = $page->setPage($currentPage)
                         ->setPageSize(2)
                         ->setModel($this->tableWeibo)
                         ->setCountMethod('getCount')

@@ -104,6 +104,7 @@ class Book extends Controller
     {
         $cond = array(
             'state' => 0,
+            'user_id' => $this->sessions->user->id,
         );
         $page = new Page();
         $data = $page->setPage(1)

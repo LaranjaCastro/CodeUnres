@@ -10,7 +10,7 @@ class User extends Model
     protected $table = 'user';
     public $timestamps = false;
 
-    public function get(array $where, array $fieled)
+    public function get(array $where, array $fieled = null)
     {
         $select = DB::table('user');
         if (! empty($fieled)) {
@@ -40,7 +40,10 @@ class User extends Model
                     $select->where('name', $v);
                     break;
                 case 'user_id':
-                $select->where('user_id', $v);
+                    $select->where('user_id', $v);
+                break;
+                case 'mark':
+                $select->where('mark', $v);
                 break;
             }
         }
