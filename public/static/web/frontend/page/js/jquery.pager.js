@@ -14,7 +14,7 @@
             $(this).empty().append(renderpager(parseInt(options.pagenumber), parseInt(options.pagecount), options.buttonClickCallback));
             
             // specify correct cursor activity
-            $('.pagination li a').mouseover(function() { document.body.style.cursor = "pointer"; }).mouseout(function() { document.body.style.cursor = "auto"; });
+            $('.pages li').mouseover(function() { document.body.style.cursor = "pointer"; }).mouseout(function() { document.body.style.cursor = "auto"; });
         });
     };
 
@@ -22,7 +22,7 @@
     function renderpager(pagenumber, pagecount, buttonClickCallback) {
 
         // setup $pager to hold render
-        var $pager = $('<ul class="pagination"></ul>');
+        var $pager = $('<ul class="pages"></ul>');
 
         // add in the previous and next buttons
         $pager.append(renderButton('首页', pagenumber, pagecount, buttonClickCallback)).append(renderButton('上一页', pagenumber, pagecount, buttonClickCallback));
@@ -48,9 +48,9 @@
         // loop thru visible pages and render buttons
         for (var page = startPoint; page <= endPoint; page++) {
 
-            var currentButton = $('<li class="current"><a href="javascript:void(0)">' + (page) + '</a></li>');
+            var currentButton = $('<li class="page-number">' + (page) + '</li>');
 
-            page == pagenumber ? currentButton.addClass('pgCurrent') : currentButton.click(function() { buttonClickCallback(this.firstChild.firstChild.data); });
+            page == pagenumber ? currentButton.addClass('pgCurrent') : currentButton.click(function() { buttonClickCallback(this.firstChild.data); });
             currentButton.appendTo($pager);
         }
 
