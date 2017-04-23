@@ -59,4 +59,9 @@ class Tools extends Model
         return $menuId;
     }
 
+    public function getParticipleTitle(array $word)
+    {
+      $weiBo = new Web\Weibo();
+       return $weiBo->getAll(array('like_title' => $word));
+    }
 }

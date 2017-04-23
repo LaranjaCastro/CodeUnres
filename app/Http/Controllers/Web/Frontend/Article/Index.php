@@ -18,7 +18,6 @@ class Index extends Controller
         $this->tableWeibo = new Web\Weibo();
     }
 
-    // PHP 文章列表
     public function lists($menu, $pageMark = false, $num = false)
     {
 

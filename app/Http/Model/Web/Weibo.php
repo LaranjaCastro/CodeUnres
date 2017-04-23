@@ -98,6 +98,15 @@ class Weibo extends Model
                 case 'user_id':
                     $select->where('user_id', $v);
                     break;
+                case 'like_title':
+                    if (is_array($v) && count($v) == 1) {
+                        $select->where('title', 'like', '%'. implode('', $v) .'%');
+                    } elseif (is_array($v) && count($v) > 1) {
+                        foreach ($v as $k => $c) {
+                            $select->orWhere('title', 'like', '%'. $c .'%');
+                        }
+                    }
+                    break;
                 case 'id':
                     if (is_array($v)) {
                         $select->whereIn('id', $v);

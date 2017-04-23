@@ -16,6 +16,16 @@
 @section('content')
     <div class="article-content" style="max-width:800px">
         <div>{!! $content['content'] !!}</div>
+        @if($relatedReadingTitle)
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+        <blockquote>
+            <p>
+                @foreach($relatedReadingTitle as $k => $item)
+                <a href="{!! $item['url'] !!}" target="_blank" rel="external">{{ $item['title'] }}</a><br>
+                @endforeach
+            </p>
+        </blockquote>
+        @endif
     </div>
 
 
