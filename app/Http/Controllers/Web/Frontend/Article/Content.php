@@ -47,7 +47,10 @@ class Content extends Controller
                 // 分词
                 $participle = $this->toolsScws->getScws($content['title']);
                 array_multisort(array_column($participle,'weight'),SORT_DESC,$participle);
-                $word = array_column(array($participle[0], $participle[1]),'word');
+                $word = array_column($participle,'word');
+                if (count($participle) >= 2) {
+                    $word = array_column(array($participle[0], $participle[1]),'word');
+                }
 
                 $relatedReading = json_decode(json_encode($this->tools->getParticipleTitle($word)), true);
                 $articleProcess = new ArticleProcess();
@@ -56,7 +59,7 @@ class Content extends Controller
                 if ($relatedReading) {
                     $relatedReadingTitle = array();
                     foreach ($relatedReading as $k => $v) {
-                        if ($v['title'] != $content['title']) {
+                        if ($v['title'] != $content['title'] && count($relatedReadingTitle) <= 8) {
                             $relatedReadingTitle[$k]['title'] = $v['title'];
                             $relatedReadingTitle[$k]['url'] = $v['url'];
                         }

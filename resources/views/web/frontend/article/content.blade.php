@@ -1,5 +1,9 @@
 @extends('web.layouts.frontend.main')
 
+@section('title')
+    {{ $content['title'] }}
+ @endsection
+
 @section('nav')
     <div class="post-header"><label class="navi-button light" for="navi">MENU</label><img class="background"
                                                                                           src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492593499139&di=679ce42ec48b0d76ba2bd044fb536c19&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01ee5e57d908280000012e7e33d166.jpg%40900w_1l_2o_100sh.jpg">
@@ -17,7 +21,7 @@
     <div class="article-content" style="max-width:800px">
         <div>{!! $content['content'] !!}</div>
         @if($relatedReadingTitle)
-        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="相关文章"></a>相关文章</h2>
         <blockquote>
             <p>
                 @foreach($relatedReadingTitle as $k => $item)
