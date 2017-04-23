@@ -27,7 +27,7 @@ class Index extends Controller
             $field = array('id', 'title', 'content', 'create_time', 'category');
             $page = new Page();
             $page->setPage(1)
-                ->setPageSize(8)
+                ->setPageSize(10)
                 ->setCondtion(array('category' => $menuId))
                 ->setModel($this->tableWeibo)
                 ->setCountMethod('getCount')

@@ -35,7 +35,7 @@ class Index extends Controller
         );
         $page = new Page();
         $data = $page->setPage($currentPage)
-                        ->setPageSize(2)
+                        ->setPageSize(10)
                         ->setModel($this->tableWeibo)
                         ->setCountMethod('getCount')
                         ->setListMethod('getList')
