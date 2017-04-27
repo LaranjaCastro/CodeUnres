@@ -13,6 +13,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public $redis;
+
+    public function __construct()
+    {
+        $this->redis = Redis::connection();
+    }
+
     public static function returnAjsx($status, $msg)
     {
         return json_encode(array('status' => $status, 'msg' => $msg));

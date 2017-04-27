@@ -16,7 +16,7 @@ class Index extends Controller
 {
     private $tableRecommend;
     private $tableWeibo;
-    protected $redis;
+//    protected $redis;
 
     public function __construct()
     {

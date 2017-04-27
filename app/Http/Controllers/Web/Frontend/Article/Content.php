@@ -17,7 +17,7 @@ class Content extends Controller
 {
     private $table;
     private $tableUser;
-    protected $redis;
+    public $redis;
     protected $toolsScws;
     protected $tools;
 
